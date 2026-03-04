@@ -331,6 +331,48 @@ h1 {
   font-size: clamp(1.55rem, 3.2vw, 2.2rem);
 }
 
+.visual-section {
+  padding-top: 26px;
+}
+
+.visual-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.visual-card {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #d8ccff;
+  background: #fff;
+}
+
+.visual-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.visual-content {
+  padding: 12px;
+}
+
+.visual-kicker {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  font-weight: 800;
+  color: #6d28d9;
+}
+
+.visual-content h3 {
+  margin: 6px 0 0;
+  font-size: 1rem;
+}
+
 .section-subtitle {
   margin-top: 8px;
   color: var(--muted);
@@ -381,6 +423,15 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.plan-img {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #e6dcff;
 }
 
 .plan h3 { margin: 0; font-size: 1.2rem; }
@@ -442,6 +493,25 @@ h1 {
   background: linear-gradient(180deg, #f8f4ff, #fff);
   border-top: 1px solid #e7ddff;
   border-bottom: 1px solid #e7ddff;
+}
+
+.gallery-section {
+  padding-top: 26px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #dacfff;
 }
 
 .testimonials {
@@ -591,11 +661,13 @@ h1 {
 
 @media (max-width: 980px) {
   .hero-grid,
+  .visual-grid,
   .principles-grid,
   .plans,
   .steps,
   .testimonials,
-  .banners-grid {
+  .banners-grid,
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
