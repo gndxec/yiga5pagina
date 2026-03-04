@@ -18,14 +18,25 @@ if (leadAlertsHost) {
   const clientNames = [
     'María José',
     'Carlos Andrade',
-    'Ana Lucía',
+    'Lian Mejia',
+    'Adrian Changalombo',
+    'Christian Burgos',
+    'Douglas Coronado',
+    'Juan GOnzalez',
     'Javier M.',
     'Daniela Torres',
     'Ricardo P.',
     'Camila Reyes',
     'Luis Fernando',
     'Valeria C.',
-    'Jonathan V.'
+    'Jonathan V.',
+    'Johan Gómez',
+    'Sofía Martínez',
+    'Andrés F.',
+    'Isabella R.',
+    'Diego L.',
+    'Natalia S.',
+    'Sebastián M.',
   ];
 
   const clientMessages = [
