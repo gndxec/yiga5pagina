@@ -1,0 +1,9 @@
+services:
+  landing-yiga5:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: landing-yiga5
+    ports:
+      - "10000:80"
+    restart: unless-stopped
