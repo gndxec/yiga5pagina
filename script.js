@@ -12,6 +12,28 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+const plansTrack = document.getElementById('plans-carousel-track');
+const plansPrev = document.querySelector('.plans-arrow-prev');
+const plansNext = document.querySelector('.plans-arrow-next');
+
+if (plansTrack && plansPrev && plansNext) {
+  plansNext.addEventListener('click', () => {
+    const firstCard = plansTrack.firstElementChild;
+
+    if (firstCard) {
+      plansTrack.appendChild(firstCard);
+    }
+  });
+
+  plansPrev.addEventListener('click', () => {
+    const lastCard = plansTrack.lastElementChild;
+
+    if (lastCard) {
+      plansTrack.prepend(lastCard);
+    }
+  });
+}
+
 const leadAlertsHost = document.getElementById('lead-alerts');
 
 if (leadAlertsHost) {
@@ -101,19 +123,18 @@ if (leadAlertsHost) {
       gain.connect(audioContext.destination);
 
       oscillator.start(now + index * 0.06);
-      oscillator.stop(now + 0.45 + index * 0.06);
+      oscillator.stop(now + 0.35 + index * 0.06);
     });
   };
 
   const showLeadAlert = () => {
     const name = randomItem(clientNames);
     const message = randomItem(clientMessages);
-    const avatarIndex = Math.floor(Math.random() * 70) + 1;
 
     const alert = document.createElement('article');
     alert.className = 'lead-alert';
     alert.innerHTML = `
-      <img src="https://i.pravatar.cc/88?img=${avatarIndex}" alt="Foto de ${name}" loading="lazy" />
+      <div class="lead-alert-avatar" aria-hidden="true">🔔</div>
       <div>
         <strong>🔔 ${name}</strong>
         <span>${message}</span>
