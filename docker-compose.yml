@@ -5,5 +5,20 @@ services:
       dockerfile: Dockerfile
     container_name: landing-yiga5
     ports:
-      - "10000:80"
+      - "10050:80"
+    restart: unless-stopped
+
+  yiga5-whatsapp-crm:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: yiga5-whatsapp-crm
+    environment:
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - TWILIO_WHATSAPP_NUMBER=${TWILIO_WHATSAPP_NUMBER}
+    volumes:
+      - ./backend:/app
+    ports:
+      - "18000:8000"
     restart: unless-stopped
